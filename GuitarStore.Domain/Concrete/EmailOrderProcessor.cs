@@ -3,9 +3,8 @@ using System.Net.Mail;
 using System.Text;
 using GuitarStore.Domain.Entities;
 using GuitarStore.Domain.Abstract;
-using GuitarStore.Domain.Concrete;
 
-namespace OnlineShoppingStore.Domain.Concrete
+namespace GuitarStore.Domain.Concrete
 {
     public class EmailOrderProcessor : IOrderProcessor
     {

@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace GuitarStore.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductRepository repository;

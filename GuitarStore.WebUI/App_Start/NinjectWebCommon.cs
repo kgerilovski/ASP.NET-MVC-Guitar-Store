@@ -10,12 +10,8 @@ namespace GuitarStore.WebUI.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using GuitarStore.Domain.Abstract;
-    using Moq;
-    using Domain.Entities;
-    using System.Collections.Generic;
+    using Domain.Abstract;
     using Domain.Concrete;
-    using OnlineShoppingStore.Domain.Concrete;
 
     public static class NinjectWebCommon 
     {
@@ -50,7 +46,7 @@ namespace GuitarStore.WebUI.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
+                kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
                 RegisterServices(kernel);
                 return kernel;
             }
