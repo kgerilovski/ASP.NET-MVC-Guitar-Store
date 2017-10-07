@@ -11,14 +11,14 @@ namespace GuitarStore.WebUi.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Welcome to our Guitar Store!";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Our contacts:";
 
             return View();
         }
