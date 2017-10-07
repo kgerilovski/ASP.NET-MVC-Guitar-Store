@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using GuitarStore.Domain.Abstract;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,13 @@ using System.Threading.Tasks;
 using GuitarStore.Domain.Entities;
 using System.Net.Mail;
 using System.Net;
+=======
+﻿using System.Net;
+using System.Net.Mail;
+using System.Text;
+using GuitarStore.Domain.Entities;
+using GuitarStore.Domain.Abstract;
+>>>>>>> 1a40977b42b1850b739beb5d58867f68993f82e6
 
 namespace GuitarStore.Domain.Concrete
 {
@@ -55,13 +63,24 @@ namespace GuitarStore.Domain.Concrete
                     .AppendLine(shippingInfo.Zip)
                     .AppendLine(shippingInfo.Country)
                     .AppendLine("---");
+<<<<<<< HEAD
                 MailMessage mailMessage = new MailMessage(new MailAddress(emailSettings.MailFromAddress).Address,
                 new MailAddress(emailSettings.MailToAddress).Address,
                 "New order submitted!",
                 body.ToString());
+=======
+                    MailMessage mailMessage = new MailMessage(new MailAddress(emailSettings.MailFromAddress).Address,
+                    new MailAddress(emailSettings.MailToAddress).Address,
+                    "New order submitted!",
+                    body.ToString());
+>>>>>>> 1a40977b42b1850b739beb5d58867f68993f82e6
 
                 smtpClient.Send(mailMessage);
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1a40977b42b1850b739beb5d58867f68993f82e6

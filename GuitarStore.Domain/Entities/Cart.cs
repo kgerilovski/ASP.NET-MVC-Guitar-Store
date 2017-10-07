@@ -10,10 +10,18 @@ namespace GuitarStore.Domain.Entities
         public void AddItem(Product product, int quantity)
         {
             CartLine line = lineCollection.Where(p => p.Product.ProductId == product.ProductId)
+<<<<<<< HEAD
                                           .FirstOrDefault();
             if (line == null)
             {
                 lineCollection.Add(new CartLine { Product = product, Quantity = quantity });
+=======
+                .FirstOrDefault();
+            if(line == null)
+            {
+                lineCollection.Add(
+                    new CartLine { Product = product, Quantity = quantity });
+>>>>>>> 1a40977b42b1850b739beb5d58867f68993f82e6
             }
             else
             {

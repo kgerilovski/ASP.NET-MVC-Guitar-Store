@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a40977b42b1850b739beb5d58867f68993f82e6
 namespace GuitarStore.Domain.Entities
 {
     public class Product
@@ -15,7 +18,13 @@ namespace GuitarStore.Domain.Entities
         [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Positive price is required.")]
         public decimal Price { get; set; }
+<<<<<<< HEAD
         [Required(ErrorMessage = "Category is required!")]
         public string Category { get; set; }
+=======
+        [Required(ErrorMessage = "Category is required.")]
+        public string Category { get; set; }
+
+>>>>>>> 1a40977b42b1850b739beb5d58867f68993f82e6
     }
 }
