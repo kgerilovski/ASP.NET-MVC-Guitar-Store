@@ -57,7 +57,8 @@ namespace UnitTests
 
             // Assert
             Assert.AreEqual(@"<a class=""btn btn-default"" href=""Page1"">1</a>"
-                + @"<a class=""btn btn-default btn-primary selected"" href=""Page2"">2</a>"                + @"<a class=""btn btn-default"" href=""Page3"">3</a>",
+                + @"<a class=""btn btn-default btn-primary selected"" href=""Page2"">2</a>"
+                + @"<a class=""btn btn-default"" href=""Page3"">3</a>",
                 result.ToString());
         }
 
@@ -111,6 +112,30 @@ namespace UnitTests
             Assert.AreEqual(result.Length, 2);
             Assert.IsTrue(result[0].Name == "P2" && result[0].Category == "Cat2");
             Assert.IsTrue(result[1].Name == "P4" && result[1].Category == "Cat2");
+        }
+
+        [TestMethod]
+        public void Description_Is_Valid()
+        {
+            // Arrange
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[] {
+                new Product {ProductId = 1, Name = "P1", Description = "Blablabla" },
+                new Product {ProductId = 2, Name = "P2", Description = "Test" },
+                new Product {ProductId = 3, Name = "P3", Description = "TestTest" },
+                new Product {ProductId = 4, Name = "P4", Description = "asdasdasd" },
+                new Product {ProductId = 5, Name = "P5", Description = "dsadsadsa" }
+            });
+            ProductController controller = new ProductController(mock.Object);
+            controller.PageSize = 3;
+
+            // Act
+            ProductsListViewModel result = (ProductsListViewModel)controller.List(null, 2).Model;
+
+            // Assert
+            Product[] prodArray = result.Products.ToArray();
+            Assert.AreEqual(prodArray[0].Description, "asdasdasd");
+            Assert.AreEqual(prodArray[1].Description, "dsadsadsa");
         }
     }
 }

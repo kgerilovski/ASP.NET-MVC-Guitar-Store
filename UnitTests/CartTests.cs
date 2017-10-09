@@ -127,6 +127,24 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void Can_Remove_From_Cart()
+        {
+            // Arrange
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[] {
+                new Product {ProductId = 1, Name = "P1", Category = "Bass"},
+            }.AsQueryable());
+            Cart cart = new Cart();
+            CartController cartController = new CartController(mock.Object, null);
+
+            // Act
+            cartController.RemoveFromCart(cart, 1, null);
+
+            // Assert
+            Assert.AreEqual(cart.Lines.Count(), 0);
+        }
+
+        [TestMethod]
         public void Adding_Product_To_Cart_Goes_To_Cart_Screen()
         {
             // Arrange
