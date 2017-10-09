@@ -235,5 +235,16 @@ namespace UnitTests
             Assert.AreEqual("Completed", result.ViewName);
             Assert.AreEqual(true, result.ViewData.ModelState.IsValid);
         }
+
+        [TestMethod]
+        public void Summary()
+        {
+            CartController controller = new CartController(null, null);
+            Cart cart = new Cart();
+
+            PartialViewResult result = controller.Summary(cart) as PartialViewResult;
+
+            Assert.IsNotNull(result);
+        }
     }
 }
