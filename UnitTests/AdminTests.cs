@@ -122,10 +122,9 @@ namespace UnitTests
                 product,
                 new Product {ProductId = 3, Name = "P3"},
             });
-            AdminController target = new AdminController(mock.Object);
-
+            AdminController adminController = new AdminController(mock.Object);
             // Act - delete the product
-            target.Delete(product.ProductId);
+            adminController.Delete(product.ProductId);
 
             // Assert
             mock.Verify(m => m.DeleteProduct(product.ProductId));
