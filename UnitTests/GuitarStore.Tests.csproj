@@ -104,10 +104,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GuitarStore.Domain\GuitarStore.Domain.csproj">
-      <Project>{655f0807-8f00-4bfd-a8aa-69f35c9d1ca4}</Project>
-      <Name>GuitarStore.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GuitarStore.WebUi\GuitarStore.WebUi.csproj">
       <Project>{c3b94e73-079f-4332-af80-3e9a228458d8}</Project>
       <Name>GuitarStore.WebUi</Name>
