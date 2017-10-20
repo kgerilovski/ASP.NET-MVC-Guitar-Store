@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model);
 }
 
 <div class="panel panel-default">
@@ -10,31 +12,44 @@
         <div>All Products</div>
     </div>
     <div class="panel-body">
-        <table class="table table-striped table-condensed table-bordered">
-            <tr>
-                <th class="text-right">ID</th>
-                <th>Name</th>
-                <th class="text-right">Price</th>
-                <th class="text-center">Actions</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td class="text-right">@item.ProductId</td>
-                    <td>@Html.ActionLink(item.Name, "Edit", new { item.ProductId })</td>
-                    <td class="text-right">@item.Price.ToString("c")</td>
-                    <td class="text-center">
-                        @using (Html.BeginForm("Delete", "Admin"))
-                        {
-                            @Html.Hidden("ProductId", item.ProductId)
-                            <input type="submit" class="btn btn-default btn-xs" value="Delete" />
-                        }
-                    </td>
-                </tr>
-            }
-        </table>
+        @using (Html.BeginForm("Delete", "Admin"))
+        {
+            @grid.Table(
+                 tableStyle: "table table-striped table-condensed table-bordered",
+                 columns: grid.Columns(
+                     grid.Column(columnName: "ProductId", header: "Id"),
+                     grid.Column(columnName: "Name", header: "Name", format: (item) =>
+                     {
+                         var link = Html.ActionLink((string)item.Name, "Edit", new { item.ProductId });
+                         return link;
+                     }),
+                     grid.Column(columnName: "Price", header: "Price"),
+                     grid.Column(columnName: "", header: "", format: @<text> <input id="ProductId", name="ProductId", type="hidden", value="@item.ProductId" /><input type="submit" class="btn btn-default btn-xs" value="Delete" /></text>)
+                     )
+                 )
+        }
+        <div class="row">
+            <div class="col-sm-6">
+                @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-sm")
+            </div>
+        </div>
+        @Html.Hidden("dir", grid.SortDirection)
+        @Html.Hidden("col", grid.SortColumn)
     </div>
     <div class="panel-footer">
         @Html.ActionLink("Add new product", "Create", null, new { @class = "btn btn-default" })
     </div>
+    <script>
+        $(function () {
+                var dir = $('#dir').val();
+                var col = $('#col').val();
+                var header = $("th a[href*=" + col + "]");
+                if (dir == "Ascending") {
+                    header.text(header.text() + " A")
+                }
+                if (dir == "Descending") {
+                    header.text(header.text() + " D")
+                }
+        })
+    </script>
 </div>
