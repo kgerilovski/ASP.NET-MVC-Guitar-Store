@@ -25,6 +25,7 @@ namespace GuitarStore.WebUi.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Product product)
         {
             if (ModelState.IsValid)
@@ -47,6 +48,7 @@ namespace GuitarStore.WebUi.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)

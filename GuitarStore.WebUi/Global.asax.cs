@@ -15,6 +15,8 @@ namespace GuitarStore.WebUi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            MvcHandler.DisableMvcResponseHeader = true;
+
             ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }
