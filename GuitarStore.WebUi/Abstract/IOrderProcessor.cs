@@ -1,6 +1,6 @@
-﻿using GuitarStore.Domain.Entities;
+﻿using GuitarStore.WebUi.Entities;
 
-namespace GuitarStore.Domain.Abstract
+namespace GuitarStore.WebUi.Abstract
 {
     public interface IOrderProcessor
     {

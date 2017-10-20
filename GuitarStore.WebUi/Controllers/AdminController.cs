@@ -1,5 +1,5 @@
-﻿using GuitarStore.Domain.Abstract;
-using GuitarStore.Domain.Entities;
+﻿using GuitarStore.WebUi.Abstract;
+using GuitarStore.WebUi.Entities;
 using System.Linq;
 using System.Web.Mvc;
 

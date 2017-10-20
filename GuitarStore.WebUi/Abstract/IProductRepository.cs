@@ -1,7 +1,7 @@
-﻿using GuitarStore.Domain.Entities;
+﻿using GuitarStore.WebUi.Entities;
 using System.Collections.Generic;
 
-namespace GuitarStore.Domain.Abstract
+namespace GuitarStore.WebUi.Abstract
 {
     public interface IProductRepository
     {

@@ -1,4 +1,4 @@
-﻿using GuitarStore.Domain.Entities;
+﻿using GuitarStore.WebUi.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GuitarStore.Domain.Concrete
+namespace GuitarStore.WebUi.Concrete
 {
     public class EFDbContext : DbContext
     {

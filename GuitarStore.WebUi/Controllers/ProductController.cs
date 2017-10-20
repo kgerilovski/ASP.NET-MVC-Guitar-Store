@@ -1,4 +1,4 @@
-﻿using GuitarStore.Domain.Abstract;
+﻿using GuitarStore.WebUi.Abstract;
 using GuitarStore.WebUi.Models;
 using System.Linq;
 using System.Web.Mvc;

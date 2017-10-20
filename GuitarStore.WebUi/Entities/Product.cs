@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace GuitarStore.Domain.Entities
+namespace GuitarStore.WebUi.Entities
 {
     public class Product
     {

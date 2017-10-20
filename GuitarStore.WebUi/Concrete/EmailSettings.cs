@@ -1,4 +1,4 @@
-﻿namespace GuitarStore.Domain.Concrete
+﻿namespace GuitarStore.WebUi.Concrete
 {
     public class EmailSettings
     {

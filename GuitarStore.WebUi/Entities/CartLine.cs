@@ -1,4 +1,4 @@
-﻿namespace GuitarStore.Domain.Entities
+﻿namespace GuitarStore.WebUi.Entities
 {
     public class CartLine
     {

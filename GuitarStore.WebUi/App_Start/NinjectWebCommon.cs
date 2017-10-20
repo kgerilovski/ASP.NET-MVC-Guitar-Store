@@ -10,11 +10,8 @@ namespace GuitarStore.WebUi.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using Moq;
-    using Domain.Abstract;
-    using Domain.Entities;
-    using System.Collections.Generic;
-    using Domain.Concrete;
+    using WebUi.Abstract;
+    using WebUi.Concrete;
 
     public static class NinjectWebCommon 
     {
@@ -68,14 +65,6 @@ namespace GuitarStore.WebUi.App_Start
         {
             kernel.Bind<IProductRepository>().To<EFProductRepository>();
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>();
-            //Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            //mock.Setup(m => m.Products).Returns(new List<Product>
-            //{
-            //    new Product {Name = "Fender", Price = 1999 },
-            //    new Product {Name = "Gibson", Price = 2500 },
-            //    new Product {Name = "Epiphone", Price = 300 }
-            //});
-            //kernel.Bind<IProductRepository>().ToConstant(mock.Object);
         }        
     }
 }

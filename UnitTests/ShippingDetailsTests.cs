@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GuitarStore.Domain.Entities;
+using GuitarStore.WebUi.Entities;
 
 namespace UnitTests
 {

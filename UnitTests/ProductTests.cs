@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GuitarStore.Domain.Abstract;
+using GuitarStore.WebUi.Abstract;
 using Moq;
-using GuitarStore.Domain.Entities;
+using GuitarStore.WebUi.Entities;
 using GuitarStore.WebUi.Controllers;
 using System.Linq;
 using GuitarStore.WebUi.HtmlHelpers;

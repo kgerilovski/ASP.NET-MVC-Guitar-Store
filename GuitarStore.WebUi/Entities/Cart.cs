@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace GuitarStore.Domain.Entities
+namespace GuitarStore.WebUi.Entities
 {
     public class Cart
     {

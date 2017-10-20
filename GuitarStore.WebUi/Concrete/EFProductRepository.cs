@@ -1,12 +1,12 @@
-﻿using GuitarStore.Domain.Abstract;
+﻿using GuitarStore.WebUi.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GuitarStore.Domain.Entities;
+using GuitarStore.WebUi.Entities;
 
-namespace GuitarStore.Domain.Concrete
+namespace GuitarStore.WebUi.Concrete
 {
     public class EFProductRepository : IProductRepository
     {

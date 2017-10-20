@@ -1,4 +1,4 @@
-﻿using GuitarStore.Domain.Entities;
+﻿using GuitarStore.WebUi.Entities;
 using System.Web.Mvc;
 
 namespace GuitarStore.WebUi.Binders

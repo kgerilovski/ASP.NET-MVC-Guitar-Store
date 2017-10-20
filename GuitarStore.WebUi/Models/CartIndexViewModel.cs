@@ -1,4 +1,4 @@
-﻿using GuitarStore.Domain.Entities;
+﻿using GuitarStore.WebUi.Entities;
 
 namespace GuitarStore.WebUi.Models
 {

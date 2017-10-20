@@ -1,14 +1,10 @@
-﻿using GuitarStore.Domain.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GuitarStore.Domain.Entities;
+﻿using System.Text;
+using GuitarStore.WebUi.Entities;
 using System.Net.Mail;
 using System.Net;
+using GuitarStore.WebUi.Abstract;
 
-namespace GuitarStore.Domain.Concrete
+namespace GuitarStore.WebUi.Concrete
 {
     public class EmailOrderProcessor : IOrderProcessor
     {
