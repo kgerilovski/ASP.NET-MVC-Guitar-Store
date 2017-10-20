@@ -1,0 +1,7 @@
+﻿@model decimal
+
+@{
+    IFormatProvider formatProvider =
+        new System.Globalization.CultureInfo("en-US");
+    <span class="pull-right label label-info">@Model.ToString("c", formatProvider)</span>
+}

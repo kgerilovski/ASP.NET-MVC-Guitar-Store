@@ -3,7 +3,7 @@
 <div class="well">
     <h3>
         <mark><strong><em>@Model.Name</em></strong></mark>
-        <span class="pull-right label label-info">@Model.Price.ToString("c")</span>
+        @Html.DisplayFor(p => p.Price)
     </h3>
     @using (Html.BeginForm("AddToCart", "Cart"))
     {
