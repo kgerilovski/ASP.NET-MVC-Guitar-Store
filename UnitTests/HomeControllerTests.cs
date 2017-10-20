@@ -25,12 +25,12 @@ namespace UnitTests
         {
             // Arrange
             HomeController controller = new HomeController();
-
             // Act
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
             Assert.AreEqual("Welcome to our Guitar Store!", result.ViewBag.Message);
+            Assert.IsNotNull(result.ViewBag.Message);
         }
 
         [TestMethod]
@@ -44,6 +44,7 @@ namespace UnitTests
 
             // Assert
             Assert.IsNotNull(result);
+            Assert.IsNotNull(result.ViewBag.Message);
         }
     }
 }

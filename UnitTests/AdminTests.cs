@@ -13,6 +13,38 @@ namespace UnitTests
     public class AdminTests
     {
         [TestMethod]
+        public void Index()
+        {
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[] {
+                new Product {ProductId = 1, Name = "P1"},
+                new Product {ProductId = 2, Name = "P2"},
+                new Product {ProductId = 3, Name = "P3"},
+            });
+            AdminController adminController = new AdminController(mock.Object);
+
+            ViewResult result = adminController.Index() as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void Create()
+        {
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[] {
+                new Product {ProductId = 1, Name = "P1"},
+                new Product {ProductId = 2, Name = "P2"},
+                new Product {ProductId = 3, Name = "P3"},
+            });
+            AdminController adminController = new AdminController(mock.Object);
+
+            ViewResult result = adminController.Create() as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
         public void Index_Contains_All_Products()
         {
             // Arrange
