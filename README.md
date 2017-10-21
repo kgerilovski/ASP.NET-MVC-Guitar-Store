@@ -2,13 +2,13 @@
 ASP.NET MVC Telerik Project
 
 #### Description
-    Web application built using ASP.NET MVC and AppVeyor for CI.
-    The web app has public, private and administrative parts:
-    - Public part includes home, about and contact pages.
+Web application built using ASP.NET MVC and AppVeyor for CI.
+The web app has public, private and administrative parts:
+- Public part includes home, about and contact pages.
 
-    - Private part consists of adding products to your cart and checking out, and online support chat, built using SignalR.
+- Private part consists of adding products to your cart and checking out, and online support chat, built using SignalR.
 
-    - Administrative part includes menu with CRUD operations and a table, paged and sorted with WebGrid.
+- Administrative part includes menu with CRUD operations and a table, paged and sorted with WebGrid.
 
 #### Deliverables
 
